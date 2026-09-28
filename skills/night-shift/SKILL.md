@@ -72,10 +72,16 @@ authorization is missing or a destructive op is needed. Defaults:
 
 ## Step 2: Pick the next target
 
+**Backlog durability first**: if the backlog was given as natural language
+(no `TODO.md` / issue list file), transcribe it verbatim to
+`.nightshift/runs/<run_id>/BACKLOG.md` BEFORE starting the loop. The file is
+the contract; conversation memory is not. Resume sessions read the file, never
+the chat history.
+
 Priority order: (a) user-designated; (b) recurrence of a known failure
 signature's root cause; (c) first unchecked item of the backlog
-(`TODO.md` / `PROJECT_STATUS.md`「下一步」/ GitHub issues / the
-`$ARGUMENTS` list). Write a one-paragraph mini-plan to
+(`TODO.md` / `BACKLOG.md` / `PROJECT_STATUS.md`「下一步」/ GitHub issues /
+the `$ARGUMENTS` list). Write a one-paragraph mini-plan to
 `.nightshift/runs/<run_id>/<task_id>/PLAN.md` before editing.
 
 ## Step 3: Minimal fix
