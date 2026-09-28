@@ -1,0 +1,25 @@
+# NOTICE
+
+AWIS (Auto-Work-In-Sleep) incorporates components adapted from
+**ARIS — Auto-claude-code-research-in-sleep**
+(https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep),
+Copyright (c) 2026 wanshuiyin, licensed under the MIT License.
+
+Adapted components:
+
+- `tools/review_gate.py`   — cross-model-family review verdict transition table
+- `tools/run_state.py`     — multi-stage run state machine (done vs accepted);
+  also inlines the model-family mapping table from ARIS `tools/provenance.py`
+- `tools/iteration_log.py` — per-round iteration / staleness tracker
+- `tools/watchdog.py`      — heartbeat staleness detector
+- `mcp-servers/codex-exec/`    — Codex CLI reviewer bridge (MCP over stdio)
+- `mcp-servers/manual-review/` — human-relay reviewer bridge
+- `mcp-servers/feishu-bridge/` — Feishu/Lark notification & approval bridge
+- `mcp-servers/llm-chat/`    — OpenAI-compatible HTTP reviewer bridge
+- `skills/shared-references/`  — gate / contract / resumability doctrine
+  (rewritten and condensed for the general-programming domain)
+
+The orchestration skeleton (startup authorization block, per-round loop,
+failure-signature triage, evidence-level verification, HANDOFF protocol,
+5-line morning summary) is generalized from the `night-auto-work` skill
+by the AWIS project author.

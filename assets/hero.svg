@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1026"/>
+      <stop offset="1" stop-color="#1c2547"/>
+    </linearGradient>
+    <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe9a8"/>
+      <stop offset="1" stop-color="#f5c542"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#8fa3e0"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="420" fill="url(#sky)" rx="18"/>
+
+  <!-- stars -->
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="80" cy="60" r="1.6"/><circle cx="180" cy="120" r="1.2"/>
+    <circle cx="320" cy="45" r="1.4"/><circle cx="520" cy="80" r="1.2"/>
+    <circle cx="700" cy="40" r="1.6"/><circle cx="860" cy="110" r="1.2"/>
+    <circle cx="1020" cy="55" r="1.5"/><circle cx="1120" cy="130" r="1.2"/>
+    <circle cx="240" cy="70" r="1"/><circle cx="950" cy="35" r="1"/>
+  </g>
+
+  <!-- moon -->
+  <circle cx="1060" cy="90" r="46" fill="url(#moon)"/>
+  <circle cx="1045" cy="80" r="8" fill="#e8b93c" opacity="0.55"/>
+  <circle cx="1075" cy="105" r="5" fill="#e8b93c" opacity="0.45"/>
+
+  <!-- title -->
+  <text x="70" y="105" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#f5f7ff" font-weight="bold">AWIS</text>
+  <text x="70" y="150" font-family="Verdana, sans-serif" font-size="22" fill="#9fb2e8">Auto-Work-In-Sleep — let AI do the work while you sleep</text>
+
+  <!-- flow chips -->
+  <g font-family="Verdana, sans-serif" font-size="17">
+    <rect x="70" y="210" width="230" height="96" rx="12" fill="#25315c" stroke="#4d5fa0" stroke-width="1.5"/>
+    <text x="92" y="248" fill="#ffd97a" font-weight="bold">1 · You, 11 PM</text>
+    <text x="92" y="278" fill="#dfe6ff">hand over the backlog</text>
+
+    <path d="M310 258 L350 258" stroke="#8fa3e0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <rect x="360" y="210" width="230" height="96" rx="12" fill="#25315c" stroke="#4d5fa0" stroke-width="1.5"/>
+    <text x="382" y="248" fill="#ffd97a" font-weight="bold">2 · Executor drives</text>
+    <text x="382" y="278" fill="#dfe6ff">plan → code → tests</text>
+
+    <path d="M600 258 L640 258" stroke="#8fa3e0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <rect x="650" y="210" width="250" height="96" rx="12" fill="#2b3a2e" stroke="#5b8a68" stroke-width="1.5"/>
+    <text x="672" y="248" fill="#9de6a8" font-weight="bold">3 · Jury signs</text>
+    <text x="672" y="278" fill="#dfe6ff">another model family must</text>
+    <text x="672" y="298" fill="#dfe6ff">say "ready" — or it isn't</text>
+
+    <path d="M910 258 L950 258" stroke="#8fa3e0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <rect x="960" y="210" width="220" height="96" rx="12" fill="#25315c" stroke="#4d5fa0" stroke-width="1.5"/>
+    <text x="982" y="248" fill="#ffd97a" font-weight="bold">4 · You, 7 AM</text>
+    <text x="982" y="278" fill="#dfe6ff">morning report</text>
+  </g>
+
+  <!-- bottom line -->
+  <text x="70" y="370" font-family="Verdana, sans-serif" font-size="19" fill="#8fa3e0" font-style="italic">A loop can DRIVE; it cannot ACQUIT.</text>
+</svg>

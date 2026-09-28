@@ -1,0 +1,16 @@
+# Runtime state
+.nightshift/
+.aris/
+
+# Secrets
+.env
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
