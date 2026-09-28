@@ -4,7 +4,7 @@
   <img src="assets/hero.svg" alt="AWIS — 晚上 11 点交出任务清单；执行器开车；异家族模型陪审团签字；早上 7 点读晨报" width="100%">
 </p>
 
-[![快速开始](https://img.shields.io/badge/🚀_快速开始-3_条命令-2E7D32?style=flat)](#快速开始) · [![信条](https://img.shields.io/badge/📜_信条-循环只能开车不能签字-4B2E83?style=flat)](#核心信条) · [![Skills](https://img.shields.io/badge/Skills-3_个-orange?style=flat)](#三个-skill) · [![测试](https://img.shields.io/badge/测试-226_通过_·_CI_ubuntu+%2B+macOS-brightgreen?style=flat)](#诚实性与测试) · [![运行时](https://img.shields.io/badge/运行时-Kimi_Code_CLI_·_dsh_·_Claude_Code_·_Codex-1a4a8c?style=flat)](#评审路由) · [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat)](LICENSE)
+[![快速开始](https://img.shields.io/badge/🚀_快速开始-3_条命令-2E7D32?style=flat)](#快速开始) · [![使用手册](https://img.shields.io/badge/📖_使用手册-安装_→_第一次夜班-1a4a8c?style=flat)](docs/USAGE_CN.md) · [![信条](https://img.shields.io/badge/📜_信条-循环只能开车不能签字-4B2E83?style=flat)](#核心信条) · [![Skills](https://img.shields.io/badge/Skills-3_个-orange?style=flat)](#三个-skill) · [![测试](https://img.shields.io/badge/测试-226_通过_·_CI_ubuntu+%2B+macOS-brightgreen?style=flat)](#诚实性与测试) · [![运行时](https://img.shields.io/badge/运行时-Kimi_Code_CLI_·_dsh_·_Claude_Code_·_Codex-1a4a8c?style=flat)](#评审路由) · [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat)](LICENSE)
 
 🌱 *AWIS 是一套纪律，不是一个平台。3 个 Markdown skill + 4 个纯标准库脚本 + 3 个 MCP 小桥 —— 你的 agent 去哪儿，它跟到哪儿。*
 
