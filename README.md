@@ -44,6 +44,8 @@ The executor may drive all night. It may never sign off its own work. Every work
 
 ## Quick start
 
+> 📖 Full guide: [USAGE.md](docs/USAGE.md) · 🌙 **Story walkthrough (recommended first read)**: [One Ordinary Friday Night](docs/STORY.md)
+
 ```bash
 git clone https://github.com/tongriyaotxt/AWIS.git && cd AWIS
 bash install.sh          # skills → ~/.kimi/skills (+ ~/.claude/skills), MCP servers registered

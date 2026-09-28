@@ -44,6 +44,8 @@ AWIS 用一句话杀死第一种死法，用一套机器杀死后三种：
 
 ## 快速开始
 
+> 📖 完整手册：[USAGE_CN.md](docs/USAGE_CN.md) · 🌙 **教学故事（推荐先读）**：[一个普通周五夜里的真实使用过程](docs/STORY_CN.md)
+
 ```bash
 git clone https://github.com/tongriyaotxt/AWIS.git && cd AWIS
 bash install.sh          # skills → ~/.kimi/skills（+ ~/.claude/skills），MCP 自动注册
