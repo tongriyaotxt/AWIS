@@ -24,7 +24,7 @@ Key architectural facts:
 | Path | Contents |
 |---|---|
 | `skills/` | 3 skills (`night-shift`, `cross-model-review`, `morning-report`) + `shared-references/` doctrine docs. The core product. |
-| `tools/` | stdlib-only Python 3.9+ helpers invoked by skills. |
+| `tools/` | stdlib-only Python 3.9+ helpers invoked by skills (`review_gate.py`, `run_state.py`, `iteration_log.py`, `watchdog.py`) plus the `configure_dsh_kimi.py` dsh-tui setup popup. |
 | `mcp-servers/` | `llm-chat` (OpenAI-compatible reviewer bridge, dep: `httpx`), `manual-review`, `codex-exec` (stdio MCP, zero-dep, optional); `feishu-bridge` (HTTP, dep: `lark-oapi`). |
 | `templates/` | Copy-and-fill runtime templates (authorization block, work log, handoff, morning report, failure signatures). |
 | `tests/` | pytest suite for `tools/` and `mcp-servers/`. |

@@ -44,11 +44,21 @@ dsh-tui 与 Kimi Code CLI 使用相同的 skill 约定（`SKILL.md` + YAML front
        command: python3
        args: ['<AWIS路径>\mcp-servers\llm-chat\server.py']
        env:
-         LLM_API_KEY: '<你的 Moonshot key>'      # 不是 DeepSeek key！
-         LLM_BASE_URL: 'https://api.moonshot.cn/v1'
-         LLM_MODEL: 'kimi-k2'
+         LLM_API_KEY: '<你的 Kimi key>'
+         LLM_BASE_URL: 'https://api.kimi.com/coding/v1'   # Kimi Code 订阅 key 用这个端点
+         LLM_MODEL: 'kimi-for-coding'                    # 名字必须含 "kimi"（见下）
          LLM_REVIEW_FALLBACK_ENABLED: '1'
    ```
+
+   **两个实测的坑**（均已在本机踩过并修复）：
+   - `sk-kimi-...` 开头的 Kimi Code 订阅 key **不通** `api.moonshot.cn`（401），
+     它属于 Kimi Code 专用端点 `https://api.kimi.com/coding/v1`；Moonshot 开放平台
+     的 key 才用 `api.moonshot.cn/v1`（模型名如 `kimi-k2-0905-preview`）。
+   - `LLM_MODEL` 的名字里**必须含 "kimi"**（如 `kimi-for-coding`、`kimi-k2-*`）：
+     `review_gate.py` 靠模型名识别家族，用 `k3` 这类不含 kimi 的名字会被判为
+     未知家族 → `review_unavailable`（实测）。
+   - 便捷方式：运行 `python tools/configure_dsh_kimi.py` 会弹出配置窗口，
+     粘贴 key 保存即可（自动写入补丁并校验 dsh 解析）。
 
    改完用 `dsh --profile dsh-tui --dump-config` 验证补丁解析无误。
 
@@ -62,7 +72,8 @@ dsh-tui 与 Kimi Code CLI 使用相同的 skill 约定（`SKILL.md` + YAML front
 ## 已验证 / 待验证（诚实标注）
 
 - ✅ 已验证：skill 目录结构与 AWIS 源逐字节一致；补丁层 `dump-config` 解析通过；
-  家族方向（dsh→Moonshot 为异家族）经 `review_gate.py` 实测放行、同家族实测拒绝。
+  家族方向（dsh→Kimi 为异家族）经 `review_gate.py` 实测放行、同家族实测拒绝；
+  Kimi Code 端点 + `kimi-for-coding` 真实 API 冒烟通过（200）。
 - ⚠️ 待实测：dsh-tui 内 skill 的实际加载与 `allowed-tools` 字段的兼容性
   （dsh 工具命名与 Claude 风格不同，可能忽略该字段）；首次夜班前建议先跑一个
   小任务观察。
@@ -71,7 +82,9 @@ dsh-tui 与 Kimi Code CLI 使用相同的 skill 约定（`SKILL.md` + YAML front
 
 AWIS works in dsh-tui: copy the 4 skill dirs (flattened) into `~/.dsh/skills/`,
 register `manual-review` + `llm-chat` via the dsh-tui profile patch
-(`cordis.patch.yml`), and point llm-chat at the **Moonshot/Kimi** API — dsh is a
-deepseek-family executor, so a DeepSeek reviewer would be same-family and is
-refused by the gate. Without a Moonshot key, use `— backend: manual`.
+(`cordis.patch.yml`), and point llm-chat at **Kimi** — dsh is a deepseek-family
+executor, so a DeepSeek reviewer would be same-family and is refused by the gate.
+Kimi Code subscription keys (`sk-kimi-...`) need `https://api.kimi.com/coding/v1`
+with model `kimi-for-coding` (the model name must contain "kimi" for the gate's
+family detection). Without a Kimi key, use `— backend: manual`.
 Skill loading / `allowed-tools` compatibility in dsh-tui is not yet battle-tested.
