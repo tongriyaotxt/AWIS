@@ -45,7 +45,7 @@ AWIS 用一句话杀死第一种死法，用一套机器杀死后三种：
 ## 快速开始
 
 ```bash
-git clone <本仓库> && cd AWIS
+git clone https://github.com/tongriyaotxt/AWIS.git && cd AWIS
 bash install.sh          # skills → ~/.kimi/skills（+ ~/.claude/skills），MCP 自动注册
 # 把评审指向"对面"家族的 API（一段环境变量）：
 export LLM_API_KEY=sk-... LLM_BASE_URL=https://api.deepseek.com/v1 LLM_MODEL=deepseek-chat

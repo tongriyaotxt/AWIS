@@ -45,7 +45,7 @@ The executor may drive all night. It may never sign off its own work. Every work
 ## Quick start
 
 ```bash
-git clone <this-repo> && cd AWIS
+git clone https://github.com/tongriyaotxt/AWIS.git && cd AWIS
 bash install.sh          # skills → ~/.kimi/skills (+ ~/.claude/skills), MCP servers registered
 # point the reviewer at the OPPOSITE family's API (one env block):
 export LLM_API_KEY=sk-... LLM_BASE_URL=https://api.deepseek.com/v1 LLM_MODEL=deepseek-chat
